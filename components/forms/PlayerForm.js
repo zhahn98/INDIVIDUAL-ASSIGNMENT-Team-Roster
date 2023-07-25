@@ -16,6 +16,7 @@ const initialState = {
 function PlayerForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
   const [players, setPlayers] = useState([]);
+  console.warn(players);
   const router = useRouter();
   const { user } = useAuth();
 
@@ -36,13 +37,13 @@ function PlayerForm({ obj }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (obj.firebaseKey) {
-      updatePlayer(formInput).then(() => router.push(`/player/${obj.firebaseKey}`));
+      updatePlayer(formInput).then(() => router.push('/player/players'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createPlayer(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updatePlayer(patchPayload).then(() => {
-          router.push('/');
+          router.push('/player/players');
         });
       });
     }
