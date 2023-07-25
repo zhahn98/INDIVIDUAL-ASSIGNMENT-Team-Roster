@@ -1,0 +1,20 @@
+{
+  "players": {
+    "-Na9X8Vs-9ChJh2QSPwX": {
+      "firebaseKey": "-Na9X8Vs-9ChJh2QSPwX",
+      "first_name": "MadeWithForm",
+      "image": "IMGLINK",
+      "last_name": "asdf",
+      "position": "asdfasdf",
+      "uid": "TKp6FPSQCTYepUCYIeHHrzfTkzw1"
+    },
+    "-Na9XLty1_Z4wPNORwHL": {
+      "firebaseKey": "-Na9XLty1_Z4wPNORwHL",
+      "first_name": "Zack",
+      "image": "https://twitter.com/dr_zeeb/photo",
+      "last_name": "Hahn",
+      "position": "QB",
+      "uid": "TKp6FPSQCTYepUCYIeHHrzfTkzw1"
+    }
+  }
+}

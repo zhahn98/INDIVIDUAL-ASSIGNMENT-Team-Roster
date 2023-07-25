@@ -18,5 +18,16 @@ a {
 }
 
 body {
-  background-color: #88effd;
+  /* background-color: #002142; */
+  background-image: linear-gradient(to right, #002142, #00152a);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+}
+
+p {
+  color: aliceblue
+}
+
+h1 {
+  color: aliceblue
 }

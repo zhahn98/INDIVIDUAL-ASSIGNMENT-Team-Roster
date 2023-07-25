@@ -1,5 +1,6 @@
 import { Button } from 'react-bootstrap';
-import { signOut } from '../utils/auth';
+// import { signOut } from '../utils/auth';
+import Link from 'next/link';
 import { useAuth } from '../utils/context/authContext';
 
 function Home() {
@@ -16,10 +17,14 @@ function Home() {
       }}
     >
       <h1>Hello {user.displayName}! </h1>
-      <p>Click the button below to logout!</p>
-      <Button variant="danger" type="button" size="lg" className="copy-btn" onClick={signOut}>
-        Sign Out
-      </Button>
+      <p>Click the buttons to Create, Read, Update, and Delete team members!</p>
+      <Link href="/player/players" passHref>
+        <Button variant="info">View Team</Button>
+      </Link>
+      <br />
+      <Link href="/player/new" passHref>
+        <Button variant="info">Add Member</Button>
+      </Link>
     </div>
   );
 }
