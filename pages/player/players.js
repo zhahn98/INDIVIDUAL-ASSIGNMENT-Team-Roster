@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import { getPlayers } from '../../api/playerData';
 import { useAuth } from '../../utils/context/authContext';
 import DisplayPlayerCard from '../../components/PlayerCard';
-// import SearchBar from '../../components/SearchBar';
+import SearchBar from '../../components/Search';
 
 function PlayerHome() {
   // Sets a state for players
@@ -24,9 +24,19 @@ function PlayerHome() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const filterResult = (query) => {
+    if (query === '') {
+      getAllThePlayers();
+    } else {
+      const filter = players.filter((player) => player.first_name.toLowerCase().includes(query) || player.last_name.toLowerCase().includes(query));
+      setPlayers(filter);
+    }
+    console.warn(query);
+  };
+
   return (
     <div className="text-center my-4">
-      {/* <SearchBar /> */}
+      <SearchBar onKeyUp={(query) => filterResult(query)} />
       <Link href="/player/new" passHref>
         <Button>Add a Player</Button>
       </Link>
